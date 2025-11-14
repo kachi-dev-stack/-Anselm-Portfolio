@@ -1,0 +1,160 @@
+@import url("../global/global.css");
+#hero {
+  .container {
+    padding-block: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    @media (min-width: 1024px) {
+      min-height: calc(100vh - 80px);
+
+      flex-direction: row;
+      align-items: center;
+      > * {
+        flex: 1;
+      }
+    }
+
+    .img-container {
+      border-radius: 100%;
+      width: 65vw;
+      overflow: hidden;
+      margin-inline: auto;
+      @media (width < 1024px) {
+        max-width: 250px;
+      }
+      @media (width >= 1024px) {
+        width: 30vw;
+      }
+    }
+
+    .description-container {
+      text-align: center;
+      @media (width >= 1024px) {
+        text-align: left;
+        display: grid;
+        row-gap: 10px;
+        grid-template-columns: 1fr 50px;
+
+        .heading,
+        .body {
+          grid-column: 1;
+        }
+        .social-links {
+          grid-column: 2;
+          grid-row: 1/3;
+        }
+        .heading,
+        .btn-hire {
+          margin-bottom: 0 !important;
+        }
+        p {
+          margin-bottom: 15px !important;
+          width: 90%;
+        }
+      }
+      .heading {
+        margin-bottom: 20px;
+        h1 {
+          font-weight: 600;
+          font-size: 35px;
+
+          @media (min-width: 1024px) {
+            font-size: 40px;
+          }
+        }
+
+        h1 > span::after {
+          content: "I'm Anselm";
+          display: inline-block;
+          margin-left: 10px;
+          color: var(--primary-clr);
+          transition: 0.3s ease-in-out;
+          animation-name: changeName;
+          animation-duration: 5s;
+          animation-delay: 5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+          font-size: 25px;
+          @media (min-width: 1024px) {
+            font-size: 30px;
+          }
+        }
+      }
+      .body {
+        p {
+          font-size: 13px;
+          margin-bottom: 20px;
+
+          @media (min-width: 1024px) {
+            font-size: 16px;
+          }
+        }
+        .btn-hire {
+          display: inline-block;
+          border: 1px solid var(--primary-clr);
+          border-radius: 20px;
+          background-color: var(--primary-clr);
+          color: white;
+          padding: 0.5rem 1rem;
+          margin-bottom: 30px;
+
+          font-size: 13px;
+          font-weight: 500;
+          transition: 0.3s ease-in-out;
+          @media (min-width: 1024px) {
+            font-size: 16px;
+          }
+
+          &:hover {
+            background-color: transparent;
+            color: var(--primary-clr);
+          }
+        }
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        @media (width >= 1024px) {
+          flex-direction: column;
+          align-items: start;
+        }
+        a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid var(--black-clr);
+          border-radius: 100%;
+          color: var(--black-clr);
+          font-size: 18px;
+          padding: 5px;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background-color: var(--primary-clr);
+            color: var(--white-clr);
+            border: 1px solid var(--primary-clr);
+          }
+          @media (width >= 1024px) {
+            font-size: 20px;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes changeName {
+  0%,
+  100% {
+    content: "I'm Anselm";
+  }
+
+  25% {
+    content: "A Visual Designer";
+  }
+}

@@ -1,0 +1,96 @@
+@import url("../../fontawesome/css/all.min.css");
+@import url("./reset.css");
+
+/* === Custom Variables === */
+:root {
+  --black-clr: #1a1a1a;
+  --white-clr: #fff;
+  --primary-clr: #ffc500;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100dvh;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: var(--white-clr);
+  color: var(--black-clr);
+
+  &.dark-mode {
+    --black-clr: #fff;
+    --white-clr: #1a1a1a;
+    --primary-clr: #ffc500;
+  }
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+
+  > .container {
+    grid-column: 2;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr min(100% - 40px, 1300px) 1fr;
+  }
+}
+
+section:not(#hero) {
+  min-height: 100vh;
+  .container {
+    padding-top: 100px;
+    @media (min-width: 1024px) {
+      padding-top: 100px;
+    }
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+  }
+  .section-heading {
+    text-align: center;
+    line-height: 1.2;
+    p {
+      font-size: 12px;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      position: relative;
+    }
+  }
+}
+
+.arrow {
+  display: none;
+  @media (min-width: 1024px) {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10vh;
+    left: 100%;
+    margin-left: 30px;
+    cursor: pointer;
+    background-color: var(--primary-clr);
+    color: #fff;
+    border-radius: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-clr);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: transparent;
+      color: var(--primary-clr);
+    }
+  }
+}
+.btn {
+  cursor: pointer;
+}
