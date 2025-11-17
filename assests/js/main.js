@@ -127,6 +127,7 @@ function removeShow() {
 window.onload = runLoadPagenation();
 
 function runLoadPagenation() {
+  document.getElementById("form").reset();
   const pagenation = document.querySelector(".pagination-container");
   const activeTab = document.querySelector(".active-tab");
   const activeTabId = activeTab.id;
