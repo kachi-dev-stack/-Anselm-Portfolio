@@ -6,7 +6,6 @@ const themeIcon = document.getElementById("mode-icon");
 let darkMode = localStorage.getItem("darkMode");
 
 const date = document.querySelector("span.date");
-console.log(date);
 date.textContent = new Date().getFullYear();
 
 // Events
@@ -440,3 +439,10 @@ videoContainers.forEach((container) => {
     progress.style.width = "0%";
   });
 });
+
+window.dev = {
+      name: "Samuel Onyekachi",
+      gitHubUsername: "kachi-dev-stack",
+      role: "Full-Stack Developer",
+    };
+Object.freeze(window.dev);
